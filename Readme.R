@@ -5,3 +5,8 @@ TesGrid <- alldata[,c(1,312)]
 GridDate <- seq.Date(from = as.Date("2001-01-01"), to = as.Date("2023-12-31"), by = "days")
 plot(GridDate, TesGrid[,2], type = "l")
 write.table(data.frame(GridDate, TesGrid[,2]), "TesGlobal.csv", sep = ";", dec = ",", eol = "\r\n", row.names = FALSE)
+
+## Aug 31.
+which(GridDate == as.Date("2022-08-31"))
+which(GridDate == as.Date("2023-08-31"))
+TesGrid[c(7913,8278),]
