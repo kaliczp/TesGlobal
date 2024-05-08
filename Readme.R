@@ -13,3 +13,7 @@ write.table(data.frame(GridDate, TesGrid[,2]), "TesGlobal.csv", sep = ";", dec =
 which(GridDate == as.Date("2022-08-31"))
 which(GridDate == as.Date("2023-08-31"))
 TesGrid[c(7913,8278),]
+
+## Teljes augusztus
+which(GridDate == as.Date("2022-08-01"))
+TesGrid[7883:7913,]
