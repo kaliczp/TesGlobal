@@ -1,6 +1,9 @@
 ## Beolvasás unz connecitonnal
 zipgrid <- unz("sr_grid_20012023.txt.zip", "sr_grid_20012023.txt")
-alldata <- read.fwf(zipgrid, widths = rep(8, 1234), skip = 1, fill = TRUE)
+fejlec <- read.fwf(zipgrid, widths = rep(8, 1234), n = 1)
+alldata <- read.fwf(zipgrid, widths = rep(8, 1234), skip = 1)
+fejlec[1,1] <- "Date"
+names(alldata) <- fejlec
 TesGrid <- alldata[,c(1,312)]
 GridDate <- seq.Date(from = as.Date("2001-01-01"), to = as.Date("2023-12-31"), by = "days")
 plot(GridDate, TesGrid[,2], type = "l")
