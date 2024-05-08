@@ -17,3 +17,10 @@ TesGrid[c(7913,8278),]
 ## Teljes augusztus
 which(GridDate == as.Date("2022-08-01"))
 TesGrid[7883:7913,]
+
+## Idősor
+library(xts)
+Tes.xts <- xts(TesGrid[,2], GridDate)
+Tes.xts['2022-08']
+
+plot(Tes.xts['2023-05/2023-08'])
